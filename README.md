@@ -43,6 +43,10 @@ If you need to upgrade or setup, you probably want to log to the image and updat
 
 ```
 docker run -ti --rm  --volumes-from kallitheadata  -v /etc/localtime:/etc/localtime:ro -v /etc/sysconfig/clock:/etc/sysconfig/clock:ro codingtony/kallithea bash
+
+# You can follow the setup instructions here : http://docs.kallithea-scm.org/en/latest/setup.html#setup
+# use production.ini instead of my.ini
+
 ```
 
 ## How to create a Kallithea container using the data container
