@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER tony.bussieres@ticksmith.com
 RUN apt-get update
 RUN apt-get upgrade -y
@@ -7,7 +7,7 @@ RUN apt-get -y install python-pip python-dev mercurial git wget
 RUN mkdir /opt/kallithea
 RUN mkdir /var/repo
 RUN wget https://bootstrap.pypa.io/ez_setup.py -O - | python
-RUN hg clone https://kallithea-scm.org/repos/kallithea -u stable && cd kallithea && python setup.py develop && python setup.py compile_catalog  
+RUN wget https://files.pythonhosted.org/packages/source/K/Kallithea/Kallithea-0.3.2.tar.gz && tar xvzf Kallithea-0.3.2.tar.gz   && cd Kallithea-0.3.2 && python setup.py develop && python setup.py compile_catalog  
 
 RUN cd /opt/kallithea && \
     paster make-config Kallithea production.ini && \
